@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Работа" android:icon="@drawable/activities_icon" android:id="@+id/bottomMenuItemWork"/>
+
+    <item android:title="Главное" android:icon="@drawable/main_icon" android:id="@+id/bottomMenuItemMain"/>
+
+    <item android:title="Заметки" android:icon="@drawable/notes_icon" android:id="@+id/bottomMenuItemNotes"/>
+
+    <item android:title="Статистика" android:icon="@drawable/statistics_icon" android:id="@+id/bottomMenuItemStatistics"/>
+
+</menu>

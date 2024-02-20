@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.WorkFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/buttonsPanelLinearLayout">
+
+                <Button
+                    android:id="@+id/analiticsButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Аналитика" />
+
+                <Button
+                    android:id="@+id/searchButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="🔍 Поиск" />
+
+                <Button
+                    android:id="@+id/callsButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="☎️ Прозвон" />
+
+                <Button
+                    android:id="@+id/advertsButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="📰 Расклейка" />
+
+                <Button
+                    android:id="@+id/showButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="🏠 Показ" />
+
+                <Button
+                    android:id="@+id/meetButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="🤝 Встреча" />
+
+                <Button
+                    android:id="@+id/depositButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="💰 Залог" />
+
+                <Button
+                    android:id="@+id/dealButton"
+                    style="@style/buttons_style"
+                    android:layout_height="wrap_content"
+                    android:text="📝 Сделка" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginTop="30dp"
+                android:gravity="end"
+                app:layout_constraintTop_toBottomOf="@+id/buttonsPanelLinearLayout">
+
+                <ImageView
+                    android:id="@+id/botHelperImageView"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bot_smile_img"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/messageCloudeImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/message_cloud"
+                    app:layout_constraintEnd_toStartOf="@+id/botHelperImageView"
+                    app:layout_constraintTop_toTopOf="@+id/botHelperImageView" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Ты можешь\nвыбрать,\nчто будем\nделать дальше"
+                    android:textAlignment="center"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="@id/messageCloudeImageView"
+                    app:layout_constraintStart_toStartOf="@id/messageCloudeImageView"
+                    app:layout_constraintTop_toTopOf="@id/messageCloudeImageView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>
