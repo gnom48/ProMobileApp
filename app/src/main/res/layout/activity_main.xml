@@ -16,7 +16,12 @@
         android:id="@+id/bottomMenu"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/transparent50"
+        app:itemIconSize="50dp"
         app:menu="@menu/bottom_menu_res"
-        android:layout_alignParentBottom="true"/>
+        app:itemTextColor="@color/transparent0"
+        app:labelVisibilityMode="labeled"/>
 
 </RelativeLayout>

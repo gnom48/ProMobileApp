@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import com.example.pronedvizapp.databinding.ActivityMainBinding
 import com.example.pronedvizapp.main.MainFragment
 import com.example.pronedvizapp.main.NotesFragment
+import com.example.pronedvizapp.main.ProfileFragment
 import com.example.pronedvizapp.main.WorkFragment
 import com.example.pronedvizapp.model.User
 import com.example.pronedvizapp.model.Work
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        binding.bottomMenu.labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
 
         val bottomMenu = findViewById<BottomNavigationView>(R.id.bottomMenu)
         bottomMenu.setOnItemSelectedListener {
@@ -34,6 +41,11 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.bottomMenuItemNotes -> {
                     loadFragment(NotesFragment())
+                    true
+                }
+
+                R.id.bottomMenuItemStatistics -> {
+                    loadFragment(ProfileFragment())
                     true
                 }
 

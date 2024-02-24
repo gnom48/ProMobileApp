@@ -4,10 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#0022FF</color>
     <color name="dark_blue">#07073D</color>
-    <color name="yellow">#FFE500</color>
+    <color name="green">#87A367</color>
     <color name="light_blue">#B017256B</color>
     <color name="grey">#888888</color>
     <color name="transparent30">#45AEAEAE</color>
     <color name="transparent0">#00FFFFFF</color>
     <color name="transparent50">#7C808080</color>
+    <color name="gradient_bronze">#F29E1F</color>
+    <color name="gradient_green">#47D9D0</color>
 </resources>

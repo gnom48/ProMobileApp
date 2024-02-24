@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="Работа" android:icon="@drawable/activities_icon" android:id="@+id/bottomMenuItemWork"/>
+    <item android:title="Работа"
+        android:icon="@drawable/home_icon"
+        android:id="@+id/bottomMenuItemWork"
+        app:showAsAction="never" />
 
-    <item android:title="Главное" android:icon="@drawable/main_icon" android:id="@+id/bottomMenuItemMain"/>
+    <item android:title="Главное"
+        android:icon="@drawable/calendar_icon"
+        android:id="@+id/bottomMenuItemMain"
+        app:showAsAction="never"/>
 
-    <item android:title="Заметки" android:icon="@drawable/notes_icon" android:id="@+id/bottomMenuItemNotes"/>
+    <item android:title="Заметки"
+        android:icon="@drawable/stats_icon"
+        android:id="@+id/bottomMenuItemNotes"
+        app:showAsAction="never"/>
 
-    <item android:title="Статистика" android:icon="@drawable/statistics_icon" android:id="@+id/bottomMenuItemStatistics"/>
+    <item android:title="Статистика"
+        android:icon="@drawable/profile_icon"
+        android:id="@+id/bottomMenuItemStatistics"
+        app:showAsAction="never"/>
 
 </menu>

@@ -5,17 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/registrationFragmentRoot"
-    android:background="@drawable/main_background">
+    android:background="@color/black">
+
+    <com.example.pronedvizapp.AnimatedGradientView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gradientView"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/goBackImageButton"
         android:id="@+id/titleTextView"
         android:text="Регистрация"
-        android:textSize="36sp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:fontFamily="@font/montserrat_bold"/>
 
     <ImageButton
         android:id="@+id/goBackImageButton"
@@ -23,7 +29,7 @@
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
         android:background="@color/transparent0"
         android:contentDescription="go back"
@@ -31,17 +37,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_below="@+id/titleTextView"
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/rounded_2corners_panel">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:orientation="vertical"
@@ -55,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:hint="Имя"
-                style="@style/simpleText" />
+                style="@style/lightHintEditText" />
 
             <EditText
                 android:id="@+id/enterSurnameEditText"
@@ -63,15 +66,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:hint="Фамилия"
-                style="@style/simpleText" />
+                style="@style/lightHintEditText" />
 
             <EditText
                 android:id="@+id/enterPhoneEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:hint="Логин или номер телефона"
-                style="@style/simpleText" />
+                android:hint="Логин"
+                style="@style/lightHintEditText" />
 
             <EditText
                 android:id="@+id/enterPasswordEditText"
@@ -79,21 +82,21 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:hint="Пароль"
-                style="@style/simpleText" />
+                style="@style/lightHintEditText" />
 
         </LinearLayout>
 
         <Button
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Рарегистрироваться"
-            android:textSize="25dp"
+            android:text="Готово"
+            style="@style/customeButton"
             android:id="@+id/completeButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/goToAuthorizationTextView"
             android:background="@drawable/main_buttons_res"
-            android:layout_marginBottom="50dp"/>
+            android:layout_marginBottom="30dp"/>
 
         <TextView
             android:layout_width="300dp"
@@ -105,7 +108,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="20dp"
-            android:textColor="@color/blue"
+            style="@style/simpleText"
             android:id="@+id/goToAuthorizationTextView"
             android:textAlignment="center"/>
 

@@ -26,6 +26,8 @@ class RegistrationFragment: Fragment() {
 
         binding = FragmentRegistrationBinding.inflate(inflater, container, false)
 
+        binding.gradientView.animateGradientColors()
+
         binding.completeButton.setOnClickListener {
             // TODO проверки
             // TODO подвязать SharedPreferences
