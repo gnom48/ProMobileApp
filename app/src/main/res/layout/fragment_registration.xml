@@ -86,17 +86,18 @@
 
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/completeButton"
+            style="@style/customeButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Готово"
-            style="@style/customeButton"
-            android:id="@+id/completeButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/goToAuthorizationTextView"
+            android:layout_marginBottom="28dp"
             android:background="@drawable/main_buttons_res"
-            android:layout_marginBottom="30dp"/>
+            android:text="Готово"
+            app:layout_constraintBottom_toTopOf="@+id/goToAuthorizationTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:layout_width="300dp"

@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.example.pronedvizapp.AnimatedGradientView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gradientView"/>
+
     <FrameLayout
         android:id="@+id/mainContentFrame"
         android:layout_width="match_parent"
@@ -15,10 +20,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomMenu"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        android:background="@color/transparent50"
+        android:background="@drawable/rounded_2corners_panel"
         app:itemIconSize="50dp"
         app:menu="@menu/bottom_menu_res"
         app:itemTextColor="@color/transparent0"

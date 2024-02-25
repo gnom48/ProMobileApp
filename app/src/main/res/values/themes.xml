@@ -5,7 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.ProNedvizApp" parent="Base.Theme.ProNedvizApp" />
+    <style name="Theme.ProNedvizApp" parent="Base.Theme.ProNedvizApp">
+        <item name="android:statusBarColor">@color/light_grey</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 
     <style name="GreetingsTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/greetings</item>
