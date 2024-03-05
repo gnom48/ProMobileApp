@@ -36,13 +36,9 @@
 
                     <ImageView
                         android:id="@+id/photoImageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:background="@drawable/rounded_corners_res"
-                        android:maxWidth="90dp"
-                        android:maxHeight="120dp"
-                        android:minWidth="90dp"
-                        android:minHeight="120dp"
                         android:scaleType="centerCrop"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -64,11 +60,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
                     android:orientation="vertical">
 
                     <TextView
                         style="@style/supportText"
-                        android:layout_width="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="21sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="С возвращением," />
@@ -76,7 +75,9 @@
                     <TextView
                         android:id="@+id/userNameTextView"
                         style="@style/simpleText"
-                        android:layout_width="wrap_content"
+                        android:textSize="21sp"
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Пользователь" />
@@ -109,5 +110,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/settingsImageButton"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/transparent0"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/settings_icon" />
 
 </FrameLayout>

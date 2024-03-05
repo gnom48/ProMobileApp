@@ -50,4 +50,16 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // picasso
+    implementation("com.squareup.picasso:picasso:2.8")
+
+    // retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
+
+    // rxjava
+    implementation("io.reactivex.rxjava3:rxjava:3.0.13")
+    implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
 }

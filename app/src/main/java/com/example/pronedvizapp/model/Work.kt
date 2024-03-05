@@ -25,6 +25,8 @@ abstract class Work(
 
 class Analytics(workName: String = "Аналитика") : Work(workName) {
 
+    final val workDescription = ""
+
     override fun init() {
 
     }

@@ -1,13 +1,14 @@
 package com.example.pronedvizapp.main
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import com.example.pronedvizapp.R
+import com.example.pronedvizapp.databinding.FragmentAboutActivityBinding
 import com.example.pronedvizapp.databinding.FragmentWorkBinding
-import com.example.pronedvizapp.main.AboutActivityFragment
 import com.example.pronedvizapp.model.Analytics
 import com.example.pronedvizapp.model.Work
 
@@ -26,51 +27,59 @@ class WorkFragment : Fragment() {
 
         binding = FragmentWorkBinding.inflate(inflater, container, false)
 
-        binding.analiticsButton.setOnClickListener{
+        binding.analyticsConstraintLayout.setOnClickListener{
             var analytics: Analytics = Analytics()
 
-            showCommitFragment(analytics)
+            showCommitAlertDialog(analytics)
 
         }
-        binding.searchButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.searchConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
-        binding.callsButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.callsConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
-        binding.advertsButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.flyersConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
-        binding.showButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.showConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
-        binding.meetButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.meetConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
-        binding.dealButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.dealConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
-        binding.dealButton.setOnClickListener{
-            showCommitFragment(null!!)
+        binding.depositConstraintLayout.setOnClickListener{
+            showCommitAlertDialog(null!!)
 
         }
 
         return binding.root
     }
 
-    private fun showCommitFragment(actualWork: Work) {
-        val aboutActivityFragment = AboutActivityFragment(actualWork)
+    private fun showCommitAlertDialog(actualWork: Work) {
 
-        val fragmentManager = (requireContext() as AppCompatActivity).supportFragmentManager
-        fragmentManager.beginTransaction()
-            .add(android.R.id.content, aboutActivityFragment)
-            .addToBackStack(null)
-            .commit()
+        val binding = FragmentAboutActivityBinding.inflate(LayoutInflater.from(this.requireContext()))
+
+        val dialog = Dialog(this.requireContext())
+        dialog.window?.setBackgroundDrawableResource(R.color.transparent0)
+        dialog.setContentView(binding.root)
+        dialog.show()
+
+        binding.closeImageButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        binding.startActivityButton.setOnClickListener {
+            // TODO запуск новой работы
+        }
     }
 }

@@ -1,9 +1,7 @@
 package com.example.pronedvizapp
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.pronedvizapp.databinding.ActivityMainBinding
 import com.example.pronedvizapp.main.MainFragment
@@ -13,8 +11,8 @@ import com.example.pronedvizapp.main.WorkFragment
 import com.example.pronedvizapp.model.User
 import com.example.pronedvizapp.model.Work
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.google.android.material.navigation.NavigationBarView
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,8 +21,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
+        // tmp
+        currentUser = User("Егор Иванов", "1234", "Мужской", "+7(911)175-81-00", Date(2005, 1, 7))
 
         binding.gradientView.animateGradientColors()
 
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.bottomMenuItemMain -> {
-                    loadFragment(MainFragment())
+                    loadFragment(ProfileFragment())
                     true
                 }
 
@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.bottomMenuItemStatistics -> {
-                    loadFragment(ProfileFragment())
+                R.id.bottomMenuItemProfile -> {
+                    loadFragment(MainFragment())
                     true
                 }
 

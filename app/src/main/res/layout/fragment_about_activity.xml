@@ -4,73 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/transparent0"
+    android:layout_margin="10dp"
+    android:background="@drawable/no_tansparent_rounded_corners"
+    tools:background="@color/black"
     android:id="@+id/aboutActivityRoot">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey"
-        android:alpha="0.6" />
+    <ImageButton
+        android:id="@+id/closeImageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end"
+        android:background="@color/transparent0"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/close_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/no_tansparent_rounded_corners"
-        android:elevation="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/aboutActivityNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Деятельность"
+        style="@style/simpleText"
+        android:textSize="24sp"
+        android:fontFamily="@font/montserrat_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/closeImageButton" />
 
-        <ImageButton
-            android:id="@+id/closeImageButton"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="end"
-            android:background="@color/transparent0"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/close_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/aboutActivityNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Деятельность"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/closeImageButton" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scrollViewer"
+        android:layout_height="320dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutActivityNameTextView" >
 
         <TextView
             android:id="@+id/aboutActivityDescTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="15dp"
-            android:text="Длинное описание деятельности, с подробными указаниями и советами. "
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/aboutActivityNameTextView" />
+            style="@style/simpleText"
+            android:text="Длинное описание деятельности, с подробными указаниями и советами. "/>
 
-        <Button
-            android:id="@+id/startActivityButton"
-            android:text="Начать работать"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="50dp"/>
+    </ScrollView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startActivityButton"
+        style="@style/buttons_style"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/main_buttons_res"
+        android:text="Начать работать"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

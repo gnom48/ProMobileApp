@@ -2,24 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="Работа"
+    <item android:title="Главная"
         android:icon="@drawable/home_icon"
-        android:id="@+id/bottomMenuItemWork"
+        android:id="@+id/bottomMenuItemMain"
         app:showAsAction="never" />
 
-    <item android:title="Главное"
-        android:icon="@drawable/calendar_icon"
-        android:id="@+id/bottomMenuItemMain"
+    <item android:title="Работа"
+        android:icon="@drawable/stats_icon"
+        android:id="@+id/bottomMenuItemWork"
         app:showAsAction="never"/>
 
-    <item android:title="Заметки"
-        android:icon="@drawable/stats_icon"
+    <item android:title="Календарь"
+        android:icon="@drawable/calendar_icon"
         android:id="@+id/bottomMenuItemNotes"
         app:showAsAction="never"/>
 
-    <item android:title="Статистика"
+    <item android:title="Профиль"
         android:icon="@drawable/profile_icon"
-        android:id="@+id/bottomMenuItemStatistics"
+        android:id="@+id/bottomMenuItemProfile"
         app:showAsAction="never"/>
 
 </menu>

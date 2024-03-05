@@ -1,79 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.WorkFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/blur_bottom_res"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/topPanelLinearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/currentLocationTextView"
+            style="@style/simpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/baseline_edit_location_24"
+            android:minHeight="48sp"
+            android:text=" Локация"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners_res"
+            android:id="@+id/findSmthSearchView"
+            android:layout_margin="10dp"
+            android:autofillHints="name"
+            style="@style/simpleText"
+            app:layout_constraintTop_toBottomOf="@id/currentLocationTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topPanelLinearLayout">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/buttonsPanelLinearLayout">
 
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center_horizontal"
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                android:id="@+id/buttonsPanelLinearLayout">
+                android:layout_gravity="center"
+                android:gravity="center">
 
-                <Button
-                    android:id="@+id/analiticsButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="📊 Аналитика" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/analyticsConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:background="@drawable/analytics_res">
 
-                <Button
-                    android:id="@+id/searchButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="🔍 Поиск" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView"-->
+<!--                        android:layout_width="140dp"-->
+<!--                        android:layout_height="130dp"-->
+<!--                        android:layout_marginStart="-10dp"-->
+<!--                        android:layout_marginTop="-10dp"-->
+<!--                        android:src="@drawable/alanytics_logo"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:layout_constraintVertical_bias="1.0" />-->
 
-                <Button
-                    android:id="@+id/callsButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="☎️ Прозвон" />
+                    <com.example.pronedvizapp.GradientTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text="АНАЛИТИКА"
+                        android:textSize="25sp"
+                        app:endColor="#FFE603"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:startColor="#68EF75" />
 
-                <Button
-                    android:id="@+id/advertsButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="📰 Расклейка" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <Button
-                    android:id="@+id/showButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="🏠 Показ" />
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
 
-                <Button
-                    android:id="@+id/meetButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="🤝 Встреча" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/callsConstraintLayout"
+                        android:layout_marginStart="10sp"
+                        android:background="@drawable/calls_res"
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:layout_height="120dp">
 
-                <Button
-                    android:id="@+id/depositButton"
-                    style="@style/buttons_style"
-                    android:layout_height="wrap_content"
-                    android:text="💰 Залог" />
+                        <com.example.pronedvizapp.GradientTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_extrabold"
+                            android:text="ОБЗВОН"
+                            app:startColor="#FFFFFF"
+                            android:textSize="25sp"
+                            app:endColor="#00FFB3"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
 
-                <Button
-                    android:id="@+id/dealButton"
-                    style="@style/buttons_style"
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/showConstraintLayout"
+                        android:layout_marginEnd="10sp"
+                        android:background="@drawable/show_res"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:layout_height="120dp">
+
+                        <com.example.pronedvizapp.GradientTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_extrabold"
+                            android:text="ПОКАЗ"
+                            android:textSize="25sp"
+                            app:endColor="#FF0099"
+                            app:startColor="#AD00FF"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/flyersConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/flyer_res">
+
+                    <com.example.pronedvizapp.GradientTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text="РАССКЛЕЙКА"
+                        android:textSize="25sp"
+                        app:startColor="#FFE603"
+                        app:endColor="#68EF75"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/searchConstraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="10sp"
+                        android:layout_marginEnd="10sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/search_res">
+
+                        <com.example.pronedvizapp.GradientTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_extrabold"
+                            android:text="ПОИСК"
+                            android:textSize="25sp"
+                            app:endColor="#9000C3"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:startColor="#2200F0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/dealConstraintLayout"
+                        android:background="@drawable/deal_res"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="10sp"
+                        android:layout_marginEnd="10sp"
+                        android:layout_weight="1"
+                        android:layout_height="120dp">
+
+                        <com.example.pronedvizapp.GradientTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_extrabold"
+                            android:text="СДЕЛКА"
+                            android:textSize="25sp"
+                            app:endColor="#D1D1D1"
+                            app:startColor="#FFFFFF"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/meetConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/meet_res">
+
+                    <com.example.pronedvizapp.GradientTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text="ВСТРЕЧА"
+                        android:textSize="25sp"
+                        app:startColor="#FFFFFF"
+                        app:endColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/depositConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/deposit_res">
+
+                    <com.example.pronedvizapp.GradientTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_extrabold"
+                        android:text="ЗАДАТОК"
+                        android:textSize="25sp"
+                        app:startColor="#DDDDDD"
+                        app:endColor="#2BB199"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:text="📝 Сделка" />
+                    android:text="@string/unable_to_work"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/unableToWorkTextView"
+                    android:textAlignment="center"
+                    style="@style/simpleText"
+                    android:layout_marginBottom="50dp"/>
 
             </LinearLayout>
 
@@ -81,4 +304,4 @@
 
     </ScrollView>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
