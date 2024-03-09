@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="200dp"
+    android:background="@color/transparent0">
+
+    <View
+        android:orientation="horizontal"
+        android:layout_width="5dp"
+        android:background="@drawable/rounded_corners_res"
+        app:layout_constraintTop_toTopOf="@id/card"
+        app:layout_constraintBottom_toBottomOf="@id/card"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
+        android:id="@+id/indicatorPanel"
+        android:layout_marginVertical="20dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:id="@+id/card"
+        android:background="@drawable/note_card_others_res"
+        android:padding="5dp"
+        app:layout_constraintStart_toEndOf="@id/indicatorPanel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/simpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Название"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timeTextView"
+            style="@style/simpleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_light"
+            android:text="10:00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/contentTextView"
+            style="@style/simpleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Контент"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+        <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/task_planned_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton"
+            style="@style/customeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/main_buttons_res"
+            android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+            android:paddingHorizontal="10sp"
+            android:paddingVertical="-10sp"
+            android:textSize="14sp"
+            android:text=" Подробности "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
