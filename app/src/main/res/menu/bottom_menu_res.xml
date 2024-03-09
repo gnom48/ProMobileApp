@@ -5,20 +5,24 @@
     <item android:title="Главная"
         android:icon="@drawable/home_icon"
         android:id="@+id/bottomMenuItemMain"
+        android:iconTintMode="src_in"
         app:showAsAction="never" />
 
     <item android:title="Работа"
-        android:icon="@drawable/stats_icon"
+        android:icon="@drawable/work_icon"
+        android:iconTintMode="src_in"
         android:id="@+id/bottomMenuItemWork"
         app:showAsAction="never"/>
 
     <item android:title="Календарь"
-        android:icon="@drawable/calendar_icon"
+        android:icon="@drawable/notes_icon"
+        android:iconTintMode="src_in"
         android:id="@+id/bottomMenuItemNotes"
         app:showAsAction="never"/>
 
     <item android:title="Профиль"
         android:icon="@drawable/profile_icon"
+        android:iconTintMode="src_in"
         android:id="@+id/bottomMenuItemProfile"
         app:showAsAction="never"/>
 

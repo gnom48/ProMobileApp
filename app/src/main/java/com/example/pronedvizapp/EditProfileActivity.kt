@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import com.example.pronedvizapp.databinding.ActivityEditProfileBinding
 import com.example.pronedvizapp.databinding.EditProfileGenderDialogBinding
 import com.example.pronedvizapp.databinding.EditProfileNameDialogBinding
-import com.example.pronedvizapp.databinding.EditProfilePhoneBinding
 import com.example.pronedvizapp.databinding.FragmentAboutActivityBinding
 import com.example.pronedvizapp.model.Work
 import java.util.Locale

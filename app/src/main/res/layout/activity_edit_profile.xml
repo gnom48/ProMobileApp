@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity"
+    tools:context=".EditProfileActivity"
     android:background="#212224">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,20 +18,21 @@
 
         <ImageButton
             android:id="@+id/goBackImageButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
             android:background="@color/transparent0"
             android:contentDescription="go back"
             android:src="@drawable/back_arrow_icon"
-            android:layout_margin="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
             style="@style/simpleText"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Назад"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -116,8 +117,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/baseline_edit_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -160,8 +161,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/baseline_edit_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -203,8 +204,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/baseline_edit_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -247,8 +248,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_marginEnd="20dp"
                     android:src="@drawable/baseline_edit_24"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -271,7 +272,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginBottom="10dp"
                     android:textColor="@color/red"
                     android:text="Выйти из аккаунта"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -295,7 +295,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginBottom="10dp"
                     android:textColor="@color/red"
                     android:text="Удаление аккаунта"
                     app:layout_constraintBottom_toBottomOf="parent"

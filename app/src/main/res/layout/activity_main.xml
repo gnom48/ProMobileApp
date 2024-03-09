@@ -20,13 +20,17 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomMenu"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
+        app:itemActiveIndicatorStyle="@color/transparent0"
+        app:itemRippleColor="@color/transparent0"
+        app:itemBackground="@color/transparent0"
         android:layout_marginBottom="0dp"
         android:background="@drawable/rounded_2corners_panel"
-        app:itemIconSize="50dp"
+        app:itemIconSize="30dp"
+        android:backgroundTint="@color/transparent0"
         app:menu="@menu/bottom_menu_res"
         app:itemTextColor="@color/transparent0"
-        app:labelVisibilityMode="labeled"/>
+        app:labelVisibilityMode="unlabeled"/>
 
 </RelativeLayout>

@@ -1,6 +1,5 @@
 package com.example.pronedvizapp.main
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,12 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.SnapHelper
-import com.example.pronedvizapp.R
-import com.example.pronedvizapp.SettingsActivity
 import com.example.pronedvizapp.adapters.MainInfoAdapter
-import com.example.pronedvizapp.databinding.FragmentNotesBinding
 import com.example.pronedvizapp.databinding.FragmentProfileBinding
-import com.example.pronedvizapp.databinding.MainInfoCardBinding
 import com.example.pronedvizapp.model.MainInfoForCard
 
 class ProfileFragment : Fragment() {
@@ -31,11 +26,6 @@ class ProfileFragment : Fragment() {
     ): View? {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
-
-        binding.settingsImageButton.setOnClickListener {
-            val intent = Intent(requireActivity(), SettingsActivity::class.java)
-            startActivity(intent)
-        }
 
         binding.mainInfoRecyclerView.layoutManager = LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val snapHelper: SnapHelper = PagerSnapHelper()

@@ -30,8 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomMenu.labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
 
-        val bottomMenu = findViewById<BottomNavigationView>(R.id.bottomMenu)
-        bottomMenu.setOnItemSelectedListener {
+        binding.bottomMenu.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.bottomMenuItemWork -> {
                     loadFragment(WorkFragment())
