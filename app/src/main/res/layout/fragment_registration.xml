@@ -74,12 +74,12 @@
                     style="@style/lightHintEditText" />
 
                 <EditText
-                    android:id="@+id/enterPhoneEditText"
+                    android:id="@+id/enterUserLoginEditText"
+                    style="@style/lightHintEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
-                    android:hint="Логин"
-                    style="@style/lightHintEditText" />
+                    android:hint="Логин" />
 
                 <EditText
                     android:id="@+id/enterPasswordEditText"

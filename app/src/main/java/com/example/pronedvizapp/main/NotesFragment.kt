@@ -1,6 +1,5 @@
 package com.example.pronedvizapp.main
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pronedvizapp.CreateEditTaskActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.pronedvizapp.adapters.DatesAdapter
 import com.example.pronedvizapp.adapters.NotesAdapter
 import com.example.pronedvizapp.adapters.OnDateItemClickListener
+import com.example.pronedvizapp.databases.models.NoteOrm
 import com.example.pronedvizapp.databinding.FragmentNotesBinding
-import com.example.pronedvizapp.model.Note
-import java.time.LocalDate
+import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
+import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
@@ -46,29 +47,34 @@ class NotesFragment : Fragment() {
         binding = FragmentNotesBinding.inflate(inflater, container, false)
 
         var dateSource = arrayListOf(
-            Note("Задача", "Описание задачи", LocalDateTime.of(2024, 3, 3, 12, 0, 0)),
-            Note("Задача", "Описание задачи", LocalDateTime.of(2024, 3, 9, 12, 0, 0)),
-            Note("Задача", "Описание задачи", LocalDateTime.of(2024, 3, 9, 12, 0, 0)),
-            Note("Задача", "Описание задачи", LocalDateTime.of(2024, 3, 9, 12, 0, 0)),
-            Note("Задача", "Описание задачи", LocalDateTime.of(2024, 3, 12, 12, 0, 0)))
+            NoteOrm(1,"Задача", "Описание задачи", LocalDateTime.of(2024, 3, 3, 12, 0, 0).toEpochSecond(ZoneOffset.UTC), 1),
+            NoteOrm(2,"Задача", "Описание задачи", LocalDateTime.of(2024, 3, 9, 12, 0, 0).toEpochSecond(ZoneOffset.UTC), 1),
+            NoteOrm(3,"Задача", "Описание задачи", LocalDateTime.of(2024, 3, 9, 12, 0, 0).toEpochSecond(ZoneOffset.UTC), 1),
+            NoteOrm(4,"Задача", "Описание задачи", LocalDateTime.of(2024, 3, 9, 12, 0, 0).toEpochSecond(ZoneOffset.UTC), 1),
+            NoteOrm(5,"Задача", "Описание задачи", LocalDateTime.of(2024, 3, 12, 12, 0, 0).toEpochSecond(ZoneOffset.UTC), 1)
+        )
 
         binding.notesRecyclerView.layoutManager = LinearLayoutManager(this.requireContext(), LinearLayoutManager.VERTICAL, false)
-//        val snapHelper: SnapHelper = PagerSnapHelper()
-//        snapHelper.attachToRecyclerView(binding.notesRecyclerView)
-        binding.notesRecyclerView.adapter = NotesAdapter(ArrayList(dateSource.filter { it.noteTime.toLocalDate() == LocalDateTime.now().toLocalDate() }))
+        var notesAdapter = NotesAdapter(ArrayList(dateSource.filter { LocalDateTime.ofInstant(Instant.ofEpochSecond(it.noteDateTime), ZoneOffset.UTC).toLocalDate() == LocalDateTime.now().toLocalDate() }))
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                notesAdapter.removeItem(viewHolder.adapterPosition)
+            }
+        })
+        itemTouchHelper.attachToRecyclerView(binding.notesRecyclerView)
+        binding.notesRecyclerView.adapter = notesAdapter
 
         binding.datesRecyclerView.layoutManager = LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.datesRecyclerView.adapter = DatesAdapter(object : OnDateItemClickListener {
             override fun onItemClick(date: LocalDateTime) {
                 binding.selectedDateTextView.setText(getFormattedDateString(date))
-                binding.notesRecyclerView.adapter = NotesAdapter(ArrayList(dateSource.filter { it.noteTime.toLocalDate() == date.toLocalDate() }))
+                binding.notesRecyclerView.adapter = NotesAdapter(ArrayList(dateSource.filter { LocalDateTime.ofInstant(Instant.ofEpochSecond(it.noteDateTime), ZoneOffset.UTC).toLocalDate() == date.toLocalDate() }))
             }
         })
-
-        binding.addNewTaskFloatingActionButton.setOnClickListener {
-            val intent = Intent(this.requireContext(), CreateEditTaskActivity::class.java)
-            this.requireContext().startActivity(intent)
-        }
 
         binding.rootSwipeRefreshLayout.setOnRefreshListener {
             // TODO подтягивание обновлений из ...

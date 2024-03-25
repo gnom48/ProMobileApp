@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -63,4 +64,15 @@ dependencies {
     // rxjava
     implementation("io.reactivex.rxjava3:rxjava:3.0.13")
     implementation("io.reactivex.rxjava3:rxandroid:3.0.0")
+
+    // room
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-runtime:2.6.1")
+
+    // lifecicle
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 }

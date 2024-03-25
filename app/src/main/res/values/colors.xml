@@ -15,6 +15,8 @@
     <color name="transparent50">#7C808080</color>
     <color name="gradient_bronze">#F29E1F</color>
     <color name="gradient_green">#47D9D0</color>
+    <color name="menu_item_selected">#4ED0C8</color>
     <color name="panels_background">#353535</color>
     <color name="blue_green_back">#0F857E</color>
+    <color name="black_background">#212224</color>
 </resources>

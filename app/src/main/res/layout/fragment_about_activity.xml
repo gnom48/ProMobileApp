@@ -34,24 +34,39 @@
         app:layout_constraintTop_toBottomOf="@+id/closeImageButton" />
 
     <ScrollView
-        android:layout_width="match_parent"
         android:id="@+id/scrollViewer"
-        android:layout_height="320dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutActivityNameTextView" >
+        app:layout_constraintTop_toBottomOf="@+id/aboutActivityNameTextView">
 
         <TextView
             android:id="@+id/aboutActivityDescTextView"
+            style="@style/simpleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/simpleText"
-            android:text="Длинное описание деятельности, с подробными указаниями и советами. "/>
+            android:text="Длинное описание деятельности, с подробными указаниями и советами. " />
 
     </ScrollView>
+
+    <TextView
+        android:id="@+id/setTimeTextView"
+        style="@style/supportText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:text="2:00"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/startActivityButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewer" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/startActivityButton"
@@ -65,5 +80,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollViewer" />
+
+    <CheckBox
+        android:id="@+id/dontNotifyCheckBox"
+        android:layout_margin="10dp"
+        style="@style/supportText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Не напоминать"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

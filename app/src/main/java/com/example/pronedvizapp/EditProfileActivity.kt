@@ -21,10 +21,10 @@ class EditProfileActivity : AppCompatActivity() {
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.nameToEditTextView.setText(MainActivity.currentUser.login)
-        binding.userNameTextView.setText(MainActivity.currentUser.login)
-        binding.phoneToEditTextView.setText(MainActivity.currentUser.phone)
-        binding.genderToEditTextView.setText(MainActivity.currentUser.gender)
+        binding.nameToEditTextView.setText(MainActivity.currentUser?.login)
+        binding.userNameTextView.setText(MainActivity.currentUser?.login)
+        binding.phoneToEditTextView.setText(MainActivity.currentUser?.phone)
+        binding.genderToEditTextView.setText(MainActivity.currentUser?.gender)
 
         binding.goBackImageButton.setOnClickListener {
             this@EditProfileActivity.finish()

@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">ProNedvizApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="analytics_desc">Описание аналитики (может быть длинным, может быть на английском, может не быть)</string>
     <string name="goToRegistrationText"><u>Нет аккаунта? Зарегистрироваться</u></string>
     <string name="goToAuthorizationText"><u>Уже есть аккаунт? Войти</u></string>
     <string name="unable_to_work"><u>Не могу работать</u></string>
     <string name="aboutApp"><u>О приложении</u></string>
+
+    <string name="analytics_desc">Описание аналитики (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="search_desc">Описание поиска (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="calls_desc">Описание звоноков (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="deal_desc">Описание сделки (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="show_desc">Описание показа (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="deposit_desc">Описание задатка (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="flyer_desc">Описание расклейки (может быть длинным, может быть на английском, может не быть)</string>
+    <string name="meet_desc">Описание встречи (может быть длинным, может быть на английском, может не быть)</string>
+
 </resources>

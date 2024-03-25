@@ -8,9 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pronedvizapp.R
 import com.example.pronedvizapp.databinding.DateCardBinding
-import com.example.pronedvizapp.model.Note
 import java.time.LocalDateTime
-import java.time.temporal.ChronoUnit
 
 class DatesAdapter(private val listener: OnDateItemClickListener): RecyclerView.Adapter<DatesAdapter.DateViewHolder>() {
 

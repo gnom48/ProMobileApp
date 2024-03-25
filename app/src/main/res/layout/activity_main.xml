@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,23 +14,54 @@
     <FrameLayout
         android:id="@+id/mainContentFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomMenu"/>
+        android:layout_height="match_parent"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomMenu"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/panelBottomAppBar"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        app:itemActiveIndicatorStyle="@color/transparent0"
-        app:itemRippleColor="@color/transparent0"
-        app:itemBackground="@color/transparent0"
-        android:layout_marginBottom="0dp"
-        android:background="@drawable/rounded_2corners_panel"
-        app:itemIconSize="30dp"
-        android:backgroundTint="@color/transparent0"
-        app:menu="@menu/bottom_menu_res"
-        app:itemTextColor="@color/transparent0"
-        app:labelVisibilityMode="unlabeled"/>
+        android:layout_height="60dp"
+        android:backgroundTint="@color/grey"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="center"
+        app:fabAnchorMode="cradle"
+        app:fabCradleMargin="0dp"
+        app:fabCradleRoundedCornerRadius="0dp"
+        app:fabCradleVerticalOffset="0dp">
 
-</RelativeLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:elevation="0dp"
+            android:background="@color/transparent0"
+            android:backgroundTint="@color/transparent0"
+            app:itemActiveIndicatorStyle="@color/transparent0"
+            app:itemBackground="@color/transparent0"
+            app:itemIconSize="30dp"
+            app:itemIconTint="@color/menu_items_color"
+            app:itemRippleColor="@color/transparent0"
+            app:itemTextColor="@color/transparent0"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_menu_res" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/addNewNoteFloatingActionButton"-->
+<!--        android:backgroundTint="@drawable/add_new_note_res"-->
+<!--        app:tint="@color/white"-->
+<!--        app:layout_anchor="@id/panelBottomAppBar"-->
+<!--        android:src="@drawable/baseline_add_24" />-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/menu_item_selected"
+        android:id="@+id/addNewNoteFloatingActionButton"
+        app:layout_anchor="@id/panelBottomAppBar"
+        android:src="@drawable/baseline_add_24"
+        app:tint="@color/white"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
